@@ -17,15 +17,20 @@ const optionRotas ={
     '/':'Função principal, só diz que entrou na aplicação',
     '/livros': 'Lista os livros existentes na aplicação',
     '/livros/:id': 'Busca livros pelo id',
+    '/autores': 'Lista os autores existentes na aplicação',
+    '/autores/:id': 'Busca autores pelo id',
   },
   'Post':{
     '/livros': 'Adiciona o corpo da requisção nos livros',
+    '/autores': 'Adiciona o corpo da requisção nos autores',
   },
   'Put':{
     '/livros/:id': 'Atualiza os dados do livro com o id igual ao id do corpo',
+    '/autores/:id': 'Atualiza os dados do autor com o id igual ao id do corpo',
   },
   'Delete':{
     '/livros/:id': 'Deleta o livro com o id especificado no corpo',
+    '/autores/:id': 'Deleta o autor com o id especificado no corpo',
 
   },
   'Options':{
