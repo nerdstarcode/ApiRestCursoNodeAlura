@@ -2,7 +2,9 @@ import livros from "../models/Livro.js";
 
 export default class LivroController{
   static listarLivros = (req, res) => {
-    livros.find((err, livros)=>{
+    livros.find()
+      .populate('autor')
+      .execute((err, livros)=>{
       res.status(200).json(livros);
     })
   };
