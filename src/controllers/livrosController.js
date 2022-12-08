@@ -4,13 +4,15 @@ export default class LivroController{
   static listarLivros = (req, res) => {
     livros.find()
       .populate('autor')
-      .execute((err, livros)=>{
+      .exec((err, livros)=>{
       res.status(200).json(livros);
     })
   };
   static listarLivroPorId = (req, res) => {
     const id = req.params.id;
-    livros.findById(id, (err, livro) => {
+    livros.findById(id) 
+      .populate('autor', 'nome')
+      .exec((err, livro) => {
       if(err){
         res.status(400).send({message:`${err.message} - Falha, ID não encontrado.`});
       }else{
